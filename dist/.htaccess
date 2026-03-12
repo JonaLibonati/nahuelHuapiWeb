@@ -1,0 +1,13 @@
+# Activar motor de reescritura
+RewriteEngine On
+
+# --- Canonicalización del dominio ---
+# Forzar https y remover www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.nahuelhuapi4265\.com [NC]
+RewriteRule ^(.*)$ https://nahuelhuapi4265.com/$1 [L,R=301]
+
+# --- Redirigir todo lo que no sea archivo o carpeta a index.html (SPA) ---
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
