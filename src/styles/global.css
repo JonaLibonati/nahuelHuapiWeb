@@ -1,0 +1,13 @@
+
+@import url("./poppins.css");
+@import url("./raleway.css");
+
+@import "tailwindcss";
+
+@theme {
+  --color-whatsapp-green: rgb(0, 215, 87);
+  --font-poppins: "Poppins", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+

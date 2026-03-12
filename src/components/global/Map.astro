@@ -1,0 +1,31 @@
+<div class="relative my-map-iframe border border-stone-700 h-full">
+  <iframe
+    id="map"
+    class="w-full h-full"
+    src="https://www.google.com/maps/d/embed?mid=1H2OrW8wJLAE4VOHgXAU-_MZYhV79d7g&ehbc=2E312F&noprof=1&z=15"
+    title="Nahuel Huapi 4265, Ciudad Autónoma de Buenos Aires"
+    aria-label="Nahuel Huapi 4265, Ciudad Autónoma de Buenos Aires"></iframe>
+</div>
+
+<style>
+  .my-map-iframe {
+    filter: sepia(3%);
+  }
+</style>
+
+<script>
+  import { isSmall } from "../../helpers/viewports";
+
+  const iframe = document.getElementById("map");
+
+  const setIframeSrc = () => {
+    if (isSmall(window)) {
+    iframe.src = "https://www.google.com/maps/d/embed?mid=1H2OrW8wJLAE4VOHgXAU-_MZYhV79d7g&ehbc=2E312F&noprof=1&z=14";
+    } else {
+      iframe.src = "https://www.google.com/maps/d/embed?mid=1H2OrW8wJLAE4VOHgXAU-_MZYhV79d7g&ehbc=2E312F&noprof=1&z=15";
+    }
+  };
+
+  window.addEventListener("resize", setIframeSrc);
+  setIframeSrc();
+</script>

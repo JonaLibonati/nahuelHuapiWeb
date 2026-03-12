@@ -1,0 +1,32 @@
+---
+import ProjectUnit from "./ProjectUnit.astro";
+import terraza from "../../assets/renders/terraza.jpg";
+import ProjectUnitFloor from "./ProjectUnitFloor.astro";
+import local from "../../assets/plantas/local.jpg";
+
+const image = {
+  image: terraza,
+  alt: "Imagen de la terraza de usos multiples del proyecto Nahuel Huapi 4265"
+}
+
+---
+
+<ProjectUnit
+  id="local"
+  title="Local comercial"
+  subtitle="Modernos y distintivos, con un espacio en doble altura que aporta carácter, amplitud y una fuerte identidad arquitectónica. El diseño en dúplex permite maximizar la iluminación y la ventilación natural, generando ambientes confortables y bien integrados. Unidades contemporáneas, funcionales y llenas de luz, ideales para quienes buscan una vivienda moderna con impronta única."
+  images={[image]}
+  imagePosition="object-[80%_0]"
+>
+  <ProjectUnitFloor
+    isUnidades={false}
+    supCub="29,50"
+    supSemi="4,50"
+    supTotal="34,00"
+    planta={local}
+    plataMobile={local}
+    plantaAlt="Planta de arquitectura del Local Comercial del proyecto Nahuel Huapi 4265"
+    figPosition="left-[18px] lg:left-[6px] 2xl:left-[23px]"
+    variant="d"
+  />
+</ProjectUnit>

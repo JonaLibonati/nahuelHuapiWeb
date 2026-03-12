@@ -1,0 +1,36 @@
+---
+import ProjectInfoTitle from "./ProjectInfoTitle.astro";
+import ProjectSection from "./ProjectSection.astro";
+import Blur from "../global/Blur.astro";
+import Column from "../../layouts/Column.astro";
+
+const {id, title, subtitle, images, imagePosition} = Astro.props
+---
+
+<ProjectSection id={id}>
+  <Column>
+    <ProjectInfoTitle 
+      title={title}
+      subtitle={subtitle}
+      titleWidth=""
+    />
+  </Column>
+  <Column>
+    <div class="grid gap-10 md:gap-20 pt-10 md:pt-16">
+      <slot />
+    </div>
+  </Column>
+  <div class="grid gap-2 pt-10">
+    {images.map(({image, alt}) => 
+      <figure class="relative">
+        <Blur />
+        <img
+            class=`${imagePosition} object-cover min-h-[350px] max-h-[850px] w-full`
+            src={image.src}
+            alt={alt}
+        />
+      </figure>
+    )}
+  </div>
+</ProjectSection>  
+  

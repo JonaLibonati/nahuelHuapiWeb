@@ -1,0 +1,14 @@
+---
+import Blur from "../global/Blur.astro";
+
+const { img, alt } = Astro.props;
+---
+
+<div class="relative">
+    <Blur />
+    <img
+        class="min-h-[300px] object-center object-cover"
+        src={img.src}
+        alt={alt}
+    />
+</div>

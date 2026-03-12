@@ -1,0 +1,28 @@
+---
+import Column from "../../layouts/Column.astro";
+import Map from "../global/Map.astro";
+import SidebarIcon from "../global/icons/SidebarIcon.astro";
+import FullscreenIcon from "../global/icons/FullscreenIcon.astro";
+import ProjectInfoTitle from "./ProjectInfoTitle.astro";
+import ProjectSection from "./ProjectSection.astro";
+---
+
+<Column>
+  <ProjectSection id="ubicacion">
+    <ProjectInfoTitle
+      title="VIVIENDO VILLA URQUIZA"
+      subtitle="Descubra la cercanía a zonas verdes, medios de transporte, comercios y servicios, así como la orientación, entorno y conexiones que lo convierten en una propuesta única."
+    />
+    <ul>
+      <li class="flex gap-2 items-center text-lg uppercase italic">
+        <SidebarIcon className="size-5" /> Ver referencias
+      </li>
+      <li class="flex gap-2 items-center text-lg uppercase italic">
+        <FullscreenIcon className="size-5" /> Ver en pantalla completa
+      </li>
+    </ul>
+    <div class="h-[600px]">
+      <Map />
+    </div>
+  </ProjectSection>
+</Column>

@@ -1,0 +1,51 @@
+---
+import Column from "../../../layouts/Column.astro";
+import NavLinks from "./NavLinks.astro";
+import MenuIcon from "../../global/icons/MenuIcon.astro";
+---
+
+<nav id="nav" class="sticky top-0 z-100 bg-white py-2">
+  <Column>
+    <div class="grid justify-center lg:block">
+      <div class="grid gap-4 w-min px-4 text-center py-3 text-xl text-stone-700 justify-center border-b border-t border-stone-400 lg:hidden">
+        <button id="burger" class="grid justify-center lg:hidden"><MenuIcon className="size-6 text-stone-700"/></button>
+        <ul id="links" class="hidden gap-4 w-min ">
+          <NavLinks />
+        </ul>
+      </div>
+
+      <ul class="hidden lg:px-0 lg:w-auto lg:flex lg:gap-8 py-3 text-xl text-stone-700 justify-center border-b border-t border-stone-400">
+        <NavLinks />
+      </ul>
+    </div>
+  </Column>
+</nav>
+
+<script>
+  import { onClickOutside } from "../../../helpers/onClickOutside";
+
+  const nav = document.getElementById("nav");
+  const burger = document.getElementById("burger");
+  const links = document.getElementById("links");
+
+  const closeNav = () => {
+    links.classList.remove("grid");
+    links.classList.add("hidden");
+  }
+
+  burger.addEventListener("click", () => {
+    links.classList.toggle("hidden");
+    links.classList.toggle("grid");
+  })
+
+  for (const li of links.children) {
+    li.addEventListener("click", () => {
+      closeNav();
+    })
+  }
+
+  onClickOutside(nav, () => {
+    closeNav();
+  });
+
+</script>

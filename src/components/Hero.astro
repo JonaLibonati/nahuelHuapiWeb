@@ -1,0 +1,38 @@
+---
+import Column from "../layouts/Column.astro";
+import FaceImage from "./global/FaceImage.astro";
+
+const size = "h-[420px] md:h-[660px] lg:h-[740px]"
+---
+
+<section id="hero" class=`relative ${size}`>
+  <div class="relative">
+    <Column>
+      <h1 class=`relative z-20 prs leading-none text-transparent font-black text-[29px] md:text-[60px] lg:text-[80px] uppercase pt-16`>Nahuel Huapi <span class="font-poppins">4265</span></h1>
+      <h2 class="font-thin uppercase text-[17px] md:text-[24px] lg:text-[29px] xl:text-[38px]">Desarrollo inmobiliario</h2>
+    </Column>
+  </div>
+  
+  <FaceImage position="absolute" objectPosition="object-[50%_-40px] md:object-[50%_-160px] lg:object-[40%_-548px]" size={size} fetchpriority="high"/>
+</section>
+
+<style>
+  #hero .prs {
+    -webkit-text-stroke-width: 3px;
+    /* Sets the stroke width */
+    -webkit-text-stroke-color: var(--color-stone-700);
+    /* Sets the stroke color */
+  }
+
+  @media only screen and (max-width: 768px) {
+    #hero .prs {
+      -webkit-text-stroke-width: 1.5px;
+      /* Sets the stroke width */
+    }
+  }
+
+  #hero .prs .stone {
+    /* Sets the stroke color */
+    color: var(--color-stone-200);
+  }
+</style>

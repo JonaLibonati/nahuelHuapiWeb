@@ -1,0 +1,86 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="es-AR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content="Nahuel Huapi 4265, desarrollo inmobiliario, Axia Baires, ">
+		<meta name="description"
+			content="Un proyecto arquitectónico en Saavedra que combina minimalismo, equilibrio y detalle en cada espacio. Nahuel Huapi 4265: diseño contemporáneo en Buenos Aires.">
+		<meta name="author" content="Jonathan Nicolas Libonati, Estudio Materia">
+		<meta name="copyright" content="Axia Baires">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="index, follow" />
+
+		<!-- Canonical-->
+		<link rel="canonical" href="https://nahuelhuapi4265.com/" />
+
+		<!-- Open graph meta tags-->
+		<meta property="og:title" content="Nahuel Huapi 4265 | Desarrollo Inmobiliario" />
+		<meta property="og:site_name" content="Nahuel Huapi 4265" />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description"
+			content="Un proyecto arquitectónico en Saavedra que combina minimalismo, equilibrio y detalle en cada espacio. Nahuel Huapi 4265: diseño contemporáneo en Buenos Aires." />
+		<meta property="og:url" content="https://nahuelhuapi4265.com/" />
+		<meta property="og:image" content="https://nahuelhuapi4265.com/og-image.jpg" />
+
+		<!-- Twitter meta tags-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Nahuel Huapi 4265 | Desarrollo Inmobiliario" />
+		<meta name="twitter:description"
+			content="Un proyecto arquitectónico en Saavedra que combina minimalismo, equilibrio y detalle en cada espacio. Nahuel Huapi 4265: diseño contemporáneo en Buenos Aires." />
+		<meta name="twitter:url" content="https://nahuelhuapi4265.com/" />
+		<meta name="twitter:image" content="https://nahuelhuapi4265.com/og-image.jpg" />
+
+		<!-- icons -->
+		<link rel="icon" href="/favicon.ico">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Fonts preload -->
+		<link rel="preload" href="/fonts/raleway/Raleway-Thin.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/raleway/Raleway-Black.woff2" as="font" type="font/woff2" crossorigin />
+
+		<title>Nahuel Huapi 4265 | Desarrollo Inmobiliario</title>
+	</head>
+	<body class="font-raleway relative max-w-[1920px] left-0 right-0 m-auto">
+		<div class="body-div">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style>
+	@reference "../styles/global.css";
+
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media only screen and (min-width: 1920px) {
+		body .body-div {
+			@apply border-stone-800 border-l-2 border-r-2
+		}
+	}
+</style>
+
+<style is:global>
+    .vhn {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>

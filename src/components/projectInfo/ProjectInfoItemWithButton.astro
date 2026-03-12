@@ -1,0 +1,42 @@
+---
+import ChevronCompactRightIcon from "../global/icons/chevronCompactRightIcon.astro";
+
+const { value, text, href, variant = "a" } = Astro.props;
+
+const className = {
+  "a" : {
+    minWidth: "min-w-[60px] lg:min-w-[74px]",
+    valueTextSize: "text-5xl lg:text-6xl",
+    descripTextSize: "text-lg lg:text-2xl",
+  },
+  "b" : {
+    minWidth: "min-w-[152px] xl:min-w-[190px]",
+    valueTextSize: "text-5xl xl:text-6xl",
+    descripTextSize: "text-lg xl:text-2xl",
+  }
+}
+---
+
+<li class="group">
+  <a class="relative grid items-center" href={href}>
+    <div class="absolute">
+      <ChevronCompactRightIcon className="relative left-[150px] lg:left-[200px] size-6 text-stone-700" />
+    </div>
+    <p class="flex gap-2 xl:gap-3 w-min items-center">
+      <span
+        class=`stroke leading-none text-white font-black font-poppins text-right ${className[variant].minWidth} ${className[variant].valueTextSize}`
+        >{value}</span
+      >
+      <span class=`${className[variant].descripTextSize} font-thin pb-1 group-hover:underline`><slot name="text">{text}</slot></span>
+    </p>
+  </a>
+</li>
+
+<style>
+  .stroke {
+    -webkit-text-stroke-width: 2px;
+    /* Sets the stroke width */
+    -webkit-text-stroke-color: var(--color-stone-700);
+    /* Sets the stroke color */
+  }
+</style>

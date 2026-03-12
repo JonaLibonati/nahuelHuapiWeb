@@ -1,0 +1,8 @@
+---
+const {title, subtitle, titleWidth = "w-[800px]", subTitleWidth = "max-w-[850px]"} = Astro.props
+---
+
+<div class="grid gap-8">
+  <h2 class=`border-stone-400 border-b border-t text-[32px]/11 md:text-6xl/17 font-thin uppercase lg:w-[850px]`>{title}</h2>
+  <h3 class=`text-[22px] ${subTitleWidth}`>{subtitle}</h3>
+</div>

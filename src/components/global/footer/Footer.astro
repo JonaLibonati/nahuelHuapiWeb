@@ -1,0 +1,45 @@
+---
+import Column from "../../../layouts/Column.astro";
+import {contactData} from "../../../data/contactData.js";
+import LegalItem from "./LegalItem.astro";
+import Author from "./Author.astro";
+import WhatsappIcon from "../icons/WhatsappIcon.astro";
+
+const {rawMovil, movil} = contactData.telefonos;
+const {direccion: email} = contactData.correo;
+const {url} = contactData.sitioWeb;
+---
+
+<footer class="bg-stone-200 pt-10 pb-10">
+  <Column>
+    <ul class="flex flex-wrap gap-2 pb-5 mb-10 border-b border-stone-300" aria-label="Términos y condiciones">
+      <LegalItem text="Imágenes y renders son meramente ejemplificativos y no contractuales. La selección de las terminaciones y/o marcas será discrecional de la Empresa." />
+      <LegalItem text="El mobiliario exhibido es ilustrativo y no se encuentra incluido en la oferta que se realiza del producto inmobiliario." />
+      <LegalItem text="La distribución de los espacios y/o dimensiones, así como los detalles de terminación, aberturas y fachadas podrán variar de acuerdo con necesidades de orden técnico que se presenten durante la construcción o aprobación de las distintas etapas que conforman el emprendimiento y/o disponibilidad de materiales e insumos en el mercado local." />
+    </ul>
+    <div class="grid md:grid-cols-[320px_1fr] gap-8 pb-10 mb-5 border-b border-stone-300">
+      <div>
+        <h1 class=`relative z-20 prs leading-none text-transparent font-black text-[28px] md:text-[30px] uppercase`>Nahuel Huapi <span class="font-poppins">4265</span></h1>
+        <h2 class="font-thin uppercase text-[17px]">Desarrollo inmobiliario</h2>
+      </div>
+      <div>
+        <address class="grid grid-cols-1 gap-2 not-italic font-thin text-xl">
+          <h2 class="uppercase">Nahuel Huapi <span class="font-poppins">4265</span>, Villa Urquiza, CABA.</h2>
+          <h3 class="uppercase">Tu inversión. Tu futuro.</h3>
+          <a class="font-poppins hover:underline decoration-from-font flex gap-2 items-center" href={`https://api.whatsapp.com/send?phone=${rawMovil}&text=Hola!%20Necesito%20asesoramiento%20sobre%20Nahuel%20Huapi%204265.`}>{movil}<WhatsappIcon className="text-stone-700 size-6"/></a>
+          <a href={`https://${url}`}>www.nahuelhuapi<span class="font-poppins">4265</span>.com</a>
+        </address>
+      </div>
+    </div>
+    <Author />
+  </Column>
+</footer>
+
+<style>
+  footer .prs {
+    -webkit-text-stroke-width: 1.5px;
+    /* Sets the stroke width */
+    -webkit-text-stroke-color: var(--color-stone-700);
+    /* Sets the stroke color */
+  }
+</style>

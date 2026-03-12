@@ -1,0 +1,85 @@
+---
+import ProjectUnit from "./ProjectUnit.astro";
+import patio from "../../assets/renders/patio.jpg";
+import ProjectUnitFloor from "./ProjectUnitFloor.astro";
+import plantaMonoTipoB from "../../assets/plantas/mono-1b-2b-3b.jpg";
+import plantaMono4B from "../../assets/plantas/mono-4b.jpg";
+import plantaMono4C from "../../assets/plantas/mono-4c.jpg";
+import plantaMonoPBC from "../../assets/plantas/mono-pbc.jpg";
+
+
+const image = {
+  image: patio,
+  alt: "Imagen del patio en planta baja del proyecto Nahuel Huapi 4265"
+}
+---
+
+<ProjectUnit
+  id="monoambientes"
+  title="Monoambientes"
+  subtitle="Cómodos monoambientes divisibles, que se destacan por su diseño funcional y contemporaneo ideales para quienes buscan practicidad sin resignar confort ni calidad. Cuentan con baño completo, amplio balcon terraza y una excelente iluminación natural en todos los espacios, favorecida por la ventilación cruzada que asegura frescura y bienestar."
+  images={[image]}
+  imagePosition="object-[80%_0]"
+>
+  <div class="grid gap-10 md:gap-0 md:gap-y-20 md:grid-cols-2 md:items-start 2xl:items-center">
+    <ProjectUnitFloor
+      id="tipoB"
+      unit="1B/2B/3B"
+      description="Monoambiente divisible con balcon"
+      supCub="39,70"
+      supSemi="5,00"
+      supTotal="44,70"
+      planta={plantaMonoTipoB}
+      plataMobile={plantaMonoTipoB}
+      plantaAlt="Planta de arquitectura del departamento monoambiente 1B, 2B y 3B del proyecto Nahuel Huapi 4265"
+      variant="b"
+    />
+
+    <ProjectUnitFloor
+      id="4b"
+      unit="4B"
+      description="Monoambiente divisible con balcon‑terraza"
+      supCub="XX,XX"
+      supSemi="X,XX"
+      supTotal="XX,XX"
+      planta={plantaMono4B}
+      plataMobile={plantaMono4B}
+      plantaAlt="Planta de arquitectura del departamento monoambiente 4B del proyecto Nahuel Huapi 4265"
+      variant="c"
+      isUnidades={false}
+    />
+  </div>
+
+  <div class="grid gap-10 md:gap-20">
+    <ProjectUnitFloor
+      id="4c"
+      unit="4C"
+      description="Monoambiente divisible con balcon y terraza"
+      supCub="51,90"
+      supSemi="5,00"
+      supDesc="31,60"
+      supTotal="88,50"
+      planta={plantaMono4C}
+      plataMobile={plantaMono4C}
+      plantaAlt="Planta de arquitectura del departamento monoambiente 4B del proyecto Nahuel Huapi 4265"
+      variant="d"
+      isUnidades={false}
+    />
+    <ProjectUnitFloor
+      id="pbc"
+      unit="PBC"
+      description="Monoambiente divisible con patio y jardin"
+      supCub="38,90"
+      supSemi="5,90"
+      supDesc="39,80"
+      supTotal="84,60"
+      planta={plantaMonoPBC}
+      plataMobile={plantaMonoPBC}
+      plantaAlt="Planta de arquitectura del departamento monoambiente PBC del proyecto Nahuel Huapi 4265"
+      imgMaxHeight = "max-h-[700px] md:max-h-[1000px] 2xl:max-h-[1250px] lg:left-[-9px] relative"
+      isUnidades={false}
+      variant="d"
+    />
+  </div>
+
+</ProjectUnit>

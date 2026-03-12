@@ -1,0 +1,16 @@
+---
+import Column from "../../layouts/Column.astro";
+import DeveloperItem from "./DeveloperItem.astro";
+import logoAxia from "../../assets/logos/logo_axia_baires_banner.png"
+import logoMetrocons from "../../assets/logos/logo_metrocons.png";
+---
+
+<section id="desarrolladores" class="py-10 md:py-20 mb-4 bg-stone-200">
+  <Column>
+    <ul class="flex flex-wrap md:flex-nowrap gap-6 md:gap-8 justify-around">
+      <DeveloperItem title="axia baires" img={logoAxia} alt="Logo de Axia Baires" href="https://www.axiabaires.com/" ariaLabel="Ir a pagina de Axia Baires"/>
+      <DeveloperItem title="metrocons" img={logoMetrocons} alt="Logo de Metrocons" href="https://www.metrocons.com/" ariaLabel="Ir a pagina de Metrocons" />
+    </ul>
+  </Column>
+</section>
+

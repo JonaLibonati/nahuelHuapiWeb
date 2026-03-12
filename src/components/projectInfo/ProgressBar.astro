@@ -1,0 +1,56 @@
+---
+const { percentage } = Astro.props;
+---
+
+<astro-map data-percentage={percentage}>
+  <div
+    aria-label="Barra de progreso del desarrollo inmobiliario Nahuel Huapi 4265"
+  >
+    <div
+      id="wrapper"
+      class=`relative border-1 border-stone-700 bg-stone-600 w-[116px] lg:w-[150px] `
+    >
+      <div id="bar" class=`relative bg-white w-full bottom-0`>
+        <p
+          class="relative text-white text-xl lg:text-2xl font-thin p-3 lg:p-4 mix-blend-difference"
+        >
+          <span class="font-poppins text-3xl lg:text-4xl"
+            >{percentage * 100}%</span
+          >
+          de avance
+        </p>
+      </div>
+    </div>
+  </div>
+</astro-map>
+
+  <script>
+    import { isLarge, isMedium } from "../../helpers/viewports";
+
+    class Map extends HTMLElement {
+      connectedCallback() {
+
+        const percentage = this.dataset.percentage
+        const wrapper = document.getElementById("wrapper");
+        const bar = document.getElementById("bar");
+
+        const getHeight = () => {
+          if (isMedium(window)) return 329;
+          if (isLarge(window)) return 505;
+          return 320;
+        };
+
+        const setBarHeight = () => {
+          const height = getHeight();
+          wrapper.style.height = height + "px";
+          bar.style.height = Math.round(height * (1 - percentage)) + "px";
+        };
+
+        window.addEventListener("resize", setBarHeight);
+        setBarHeight();
+      }
+    }
+    
+    customElements.define('astro-map', Map);
+    </script>
+</astro-map>

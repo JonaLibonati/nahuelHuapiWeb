@@ -1,0 +1,18 @@
+---
+const { title, img, alt, href, ariaLabel } = Astro.props;
+---
+
+<li class="w-[200px] lg:w-[300px]">
+  <h2 class="vhn">{title}</h2>
+  <div class="w-fit m-auto h-full grid grid-rows-[1fr_min-content]">
+    <a href={href} aria-label={ariaLabel} target="_blank">
+      <figure class="flex justify-center pb-2 lg:pb-4">
+        <img
+          class="self-end justify-self-center object-contain max-h-[54px] xl:max-h-[150px]"
+          src={img.src}
+          alt={alt}
+        />
+      </figure>
+    </a>
+  </div>
+</li>

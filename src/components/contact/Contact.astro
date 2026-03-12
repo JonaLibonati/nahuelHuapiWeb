@@ -1,0 +1,167 @@
+---
+import Column from "../../layouts/Column.astro";
+import Loading from "../global/Loading.astro";
+---
+
+<section class="" id="contacto">
+  <!-- <div class="mt-4 mx-4 bg-stone-700"> -->
+  <div class="bg-stone-700">
+    <Column>
+      <div class="py-20 md:py-[150px] font-thin text-white text-4xl/12 md:text-6xl/17">
+        <div class="grid gap-2 items-center">
+            <h2 class="uppercase pb-10">Es tu momento de invertir.<br /> Contactate.</h2>
+            <form id="form" class="text-xl md:text-2xl grid md:grid-cols-2 gap-4">
+              <div class="grid gap-4">
+                <input class="input" type="text" id="fname" name="firstname" placeholder="Tu nombre" />
+                <input class="input" type="text" id="lname" name="lastname" placeholder="Tu apellido" />
+                <input class="input" type="email" id="eMail" name="eMail" placeholder="Tu eMail" />
+                <input class="input" type="tel" id="phone" name="phone" placeholder="Tu teléfono" />
+                <input class="input" type="text" id="subject" name="subject" placeholder="¿Que unidades te interesan?" />
+              </div>
+              <div class="flex flex-col gap-4">
+                <textarea class="input grow min-h-[180px] md:min-h-auto" id="message" name="message" placeholder="¿Cuál es tu consulta?"></textarea>
+                <div class="flex h-[50px]">
+                  <input
+                    id="submit"
+                    type="submit"
+                    name="submit"
+                    value="ENVIAR"
+                    class="cursor-pointer p-2 size-full bg-white text-stone-700 font-black text-center hover:bg-stone-700 hover:text-white hover:border transition-all duration-300"
+                  />
+                  <Loading id={"loadingForm"} className="border border-white"/>
+                </div>
+              </div>
+            </form>
+        </div>
+      </div>
+    </Column>
+  </div>
+</section>
+
+<style>
+  @reference "../../styles/global.css";
+
+  #contacto .input {
+    @apply p-2 border w-full focus:bg-white focus:text-stone-700 focus-visible:outline-stone-700 focus-visible:outline-offset-[-3px] focus:rounded-none
+  }
+
+  @keyframes btnSuccessFade {
+    0% {
+      background-color: white;
+      color: var(--color-stone-700);
+    }
+
+    30% {
+      background-color: var(--color-green-500);
+      color: white;
+    }
+
+    50% {
+      background-color: var(--color-green-500);
+      color: white;
+    }
+
+    100% {
+      background-color: white;
+      color: var(--color-stone-700);
+    }
+  }
+
+  @keyframes InputSuccessFade {
+    0% {
+      background-color: var(--color-stone-700);
+      color: white;
+    }
+
+    30% {
+      background-color: var(--color-green-500);
+      color: white;
+    }
+
+    50% {
+      background-color: var(--color-green-500);
+      color: white;
+    }
+
+    100% {
+      background-color: var(--color-stone-700);
+      color: white;
+    }
+  }
+
+  .success {
+    animation: btnSuccessFade 3s ease-in-out forwards;
+  }
+
+  .input.success {
+    animation: InputSuccessFade 3s ease-in-out forwards;
+  }
+
+  @keyframes btnFailFade {
+    0% {
+      background-color: white;
+      color: var(--color-stone-700);
+    }
+
+    30% {
+      background-color: var(--color-red-500);
+      color: white;
+    }
+
+    50% {
+      background-color: var(--color-red-500);
+      color: white;
+    }
+
+    100% {
+      background-color: white;
+      color: var(--color-stone-700);
+    }
+  }
+
+  @keyframes InputFailFade {
+    0% {
+      background-color: var(--color-stone-700);
+      color: white;
+    }
+
+    30% {
+      background-color: var(--color-red-500);
+      color: white;
+    }
+
+    50% {
+      background-color: var(--color-red-500);
+      color: white;
+    }
+
+    100% {
+      background-color: var(--color-stone-700);
+      color: white;
+    }
+  }
+
+  .fail {
+    animation: btnFailFade 3s ease-in-out forwards;
+  }
+
+  .input.fail {
+    animation: InputFailFade 3s ease-in-out forwards;
+  }
+</style>
+
+<script >
+  import { submit } from "../../helpers/form";
+
+  const form = document.getElementById('form');
+  const loadingForm = document.getElementById('loadingForm');
+  let isLoading = false;
+
+  // Inicializar estado
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (isLoading) return;
+    submit(e, loadingForm)
+  });
+</script>

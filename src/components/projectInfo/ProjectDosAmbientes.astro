@@ -1,0 +1,97 @@
+---
+import ProjectUnit from "./ProjectUnit.astro";
+import interior from "../../assets/renders/interior.jpg";
+import ProjectUnitFloor from "./ProjectUnitFloor.astro";
+import plantaTipoA from "../../assets/plantas/dos-1a-2a-3a.jpg";
+import planta4B from "../../assets/plantas/dos-4a.jpg";
+import planta4D from "../../assets/plantas/dos-4d.jpg";
+import plantaPBA from "../../assets/plantas/dos-pba.jpg";
+import plantaPBD from "../../assets/plantas/dos-pbd.jpg";
+
+const image1 = {
+  image: interior,
+  alt: "Imagen del interior de un departamento del proyecto Nahuel Huapi 4265"
+}
+---
+
+<ProjectUnit
+  id="dosambientes"
+  title="Dos Ambientes"
+  subtitle="Amplios, luminosos y con detalles de calidad en cada ambiente. Pensados para familias o parejas jóvenes, combinan diseño moderno, confort y funcionalidad. Cuentan con un gran balcón terraza, espacios bien distribuidos y excelente ventilación natural. Un hogar contemporáneo, cómodo y lleno de luz, donde cada detalle está pensado para disfrutar."
+  images={[image1]}
+  imagePosition="object-[80%_0]"
+>
+  <div class="grid gap-10 md:gap-0 md:gap-y-20 md:grid-cols-2 md:items-start 2xl:items-center">
+    <ProjectUnitFloor
+      description="Dos ambientes con balcon"
+      unit="1A/2B/3B"
+      supCub="44,50"
+      supSemi="4,20"
+      supTotal="48,70"
+      planta={plantaTipoA}
+      plataMobile={plantaTipoA}
+      plantaAlt="Planta de arquitectura del departamento dos ambiente 1A, 2B y 3B del proyecto Nahuel Huapi 4265"
+      variant="b"
+    />
+
+    <ProjectUnitFloor
+      description="Dos ambientes con balcon‑terraza"
+      unit="4A"
+      supCub="xx,xx"
+      supSemi="xx,xx"
+      supTotal="xx,xx"
+      planta={planta4B}
+      plataMobile={planta4B}
+      plantaAlt="Planta de arquitectura del departamento dos ambiente 4A del proyecto Nahuel Huapi 4265"
+      isUnidades={false}
+      variant="c"
+    />  
+  </div>
+  <div class="grid gap-10 md:gap-10">
+    <ProjectUnitFloor
+      description="Dos ambientes con balcon y terraza"
+      unit="4D"
+      supCub="56,70"
+      supSemi="4,20"
+      supDesc="31,60"
+      supTotal="92,50"
+      planta={planta4D}
+      plataMobile={planta4D}
+      plantaAlt="Planta de arquitectura del departamento dos ambiente 4A del proyecto Nahuel Huapi 4265"
+      isUnidades={false}
+      variant="d"
+    />
+  </div>
+  <div class="grid gap-10 md:gap-0 md:gap-y-20 md:grid-cols-2 md:items-start 2xl:items-center">
+    <ProjectUnitFloor
+      unit="PBA"
+      description="Dos ambientes con patio"
+      supCub="37,80"
+      supSemi="4,20"
+      supDesc="6,00"
+      supTotal="48,00"
+      planta={plantaPBA}
+      plataMobile={plantaPBA}
+      plantaAlt="Planta de arquitectura del departamento dos ambiente PBA del proyecto Nahuel Huapi 4265"
+      isUnidades={false}
+      variant="b"
+      imgMaxHeight = "max-h-[700px] md:max-h-[800px] 2xl:max-h-[1000px]"
+    />
+
+    <ProjectUnitFloor
+      unit="PBD"
+      description="Dos ambientes con patio y jardin"
+      supCub="44,00"
+      supSemi="4,50"
+      supdesc="49,00"
+      supTotal="97,5"
+      planta={plantaPBD}
+      plataMobile={plantaPBD}
+      plantaAlt="Planta de arquitectura del departamento dos ambiente PBD del proyecto Nahuel Huapi 4265"
+      isUnidades={false}
+      variant="c"
+      imgMaxHeight = "max-h-[760px] md:max-h-[1080px] 2xl:max-h-[1350px]"
+    />    
+  </div>
+  
+</ProjectUnit>

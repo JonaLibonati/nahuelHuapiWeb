@@ -1,0 +1,48 @@
+---
+import Column from "../../layouts/Column.astro";
+import fachada from "../../assets/renders/fachada.jpg";
+import Blur from "../global/Blur.astro";
+import ProjectInfoItem from "./ProjectInfoItem.astro";
+import ProgressBar from "./ProgressBar.astro";
+import ProjectInfoItemWithButton from "./ProjectInfoItemWithButton.astro";
+
+const data = await import("../../../public/data/avance_de_obra.json");
+const percentage = data.porcentaje;
+---
+
+<Column>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-around">
+    <figure class="relative">
+      <Blur />
+      <img
+        class="min-h-[440px] md:min-h-[500px] lg:min-h-[700px] object-cover object-center md:object-[49%_50%] lg:object-center"
+        src={fachada.src}
+        alt="Render de la fachada del edificio Nahuel Huapi"
+      />
+    </figure>
+    <div class="flex flex-col">
+      <h2 class="vhn">Informacion general del proyecto</h2>
+      <h3
+        class="text-2xl lg:text-3xl xl:text-4xl font-thin uppercase text-stone-700"
+      >
+        Minimalismo, equilibrio y detalles que acompañan el ritmo de Saavedra.
+      </h3>
+      <div class="grow flex content-center">
+        <div
+          class="grid grid-cols-[1fr_116px] lg:grid-cols-2 justify-items-center w-full pt-8 lg:pt-12 min-h-[370px] md:min-h-auto"
+        >
+          <ul
+            class="justify-self-start xl:justify-self-center grid grid-cols-1 md:gap-2 lg:gap-4 w-fit text-stone-700"
+          >
+            <ProjectInfoItem value="20" text="unidades funcionales" />
+            <ProjectInfoItemWithButton href="#monoambientes" value="8" text="monoamb. divisibles" />
+            <ProjectInfoItemWithButton href="#dosambientes" value="10" text="dos ambientes" />
+            <ProjectInfoItemWithButton href="#local" value="1" text="Local comercial" />
+            <ProjectInfoItem value="1" text="Terraza usos múltiples" />
+          </ul>
+          <ProgressBar percentage={percentage} />
+        </div>
+      </div>
+    </div>
+  </div>
+</Column>

@@ -1,0 +1,21 @@
+---
+import heroImage from "../../assets/renders/fachadaHome.jpg";
+
+const { position, objectPosition, size, fetchpriority } = Astro.props;
+---
+
+<figure class=`${position? position : "relative"} self-center top-0 w-full ${size} overflow-hidden`>
+  <div class="absolute z-10 w-full h-full bg-stone-200 opacity-60"></div>
+  <img
+    class=`filter relative object-cover ${objectPosition} w-full h-[820px] md:h-[1400px] lg:h-[2300px]`
+    src={heroImage.src}
+    alt="Imagen del proyecto inmobiliario Nahuel Huapi 4265"
+    fetchpriority={fetchpriority}
+  />
+</figure>
+
+<style>
+  .filter {
+    filter: invert(15%) grayscale(100%) sepia(5%);
+  }
+</style>
