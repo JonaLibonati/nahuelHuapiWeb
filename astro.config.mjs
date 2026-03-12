@@ -16,7 +16,7 @@ import sitemap from '@astrojs/sitemap';
  */
 
 export default defineConfig({
-  site: 'https://nahuelHuapiWeb.github.io/nahuelHuapiWeb',
+  site: 'https://jonalibonati.github.io/nahuelHuapiWeb',
   base: '/nahuelHuapiWeb',
   vite: {
     plugins: [tailwindcss()]
