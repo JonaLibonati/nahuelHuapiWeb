@@ -1,0 +1,1 @@
+import{i as m}from"./viewports.BhoDoglP.js";const e=document.getElementById("map"),o=()=>{m(window)?e.src="https://www.google.com/maps/d/embed?mid=1H2OrW8wJLAE4VOHgXAU-_MZYhV79d7g&ehbc=2E312F&noprof=1&z=14":e.src="https://www.google.com/maps/d/embed?mid=1H2OrW8wJLAE4VOHgXAU-_MZYhV79d7g&ehbc=2E312F&noprof=1&z=15"};window.addEventListener("resize",o);o();

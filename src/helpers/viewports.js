@@ -3,7 +3,6 @@ const limitLarge = 1024;
 const limitMedium = 768;
 
 export const isLarge = (window) => {
-  console.log(window.innerWidth)
   if (window.innerWidth >= limitLarge) {
     return true
   }
