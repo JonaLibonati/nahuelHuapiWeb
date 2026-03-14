@@ -12,8 +12,8 @@ import sitemap from '@astrojs/sitemap';
     plugins: [tailwindcss()]
   },
   integrations: [sitemap()]
-}); */
-
+});
+ */
 
 export default defineConfig({
   site: 'https://jonalibonati.github.io/nahuelHuapiWeb',
